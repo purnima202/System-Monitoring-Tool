@@ -37,3 +37,7 @@ if [ "$cpu_usage" -ge "$CPU_THRESHOLD" ]; then
 else
     echo "OK: CPU usage is at ${cpu_usage}%"
 fi
+
+#top CPU-consuming processes
+echo "Top 5 CPU-consuming processes"
+ps aux --sort=-%cpu | head -n 6
