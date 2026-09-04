@@ -29,7 +29,7 @@ fi
 
 #CPU Monitoring
 CPU_THRESHOLD=80
-cpu_usage=$(top -bn1 | grep "Cpu(S)" | awk '{print (100-$8)}' | cut -d. -f1)
+cpu_usage=$(top -bn1 | grep "Cpu" | awk '{print (100-$8)}' | cut -d. -f1)
 echo "CPU Usage is : $cpu_usage"
 
 if [ "$cpu_usage" -ge "$CPU_THRESHOLD" ]; then
